@@ -129,9 +129,8 @@ for e in range(epochs):
     print()
 train_duration = time() - start_train_time
 print('Training Duration: {:.2f}s'.format(train_duration))
+print('Final Training Accuracy: {:.2f}%'.format(training_results[len(training_results) - 1][3]))
 print()
-
-print('Final Training Accuracy: {:.2f}'.format(training_results[len(training_results) - 1][3]))
 
 print('----- TESTING -----')
 test_corr = 0
