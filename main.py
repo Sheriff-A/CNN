@@ -37,7 +37,7 @@ MODEL_DIR = PROJ_DIR / 'MODEL' / f'{DATE}'
 MODEL_NAME = 'cnn_model.pt'
 
 # Set this to True if the data has not been downloaded
-download = True
+download = False
 
 # Model Parameters
 in_channels = 3
