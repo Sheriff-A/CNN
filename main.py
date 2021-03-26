@@ -25,7 +25,6 @@ def print_epoch_result(result):
 
 
 def make_dir(path):
-    print(path)
     if not os.path.exists(path):
         os.makedirs(path)
 
@@ -38,7 +37,7 @@ MODEL_DIR = PROJ_DIR / 'MODEL' / f'{DATE}'
 MODEL_NAME = 'cnn_model.pt'
 
 # Set this to True if the data has not been downloaded
-download = False
+download = True
 
 # Model Parameters
 in_channels = 3
@@ -127,9 +126,10 @@ for e in range(epochs):
             ))
 
     training_results.append([e, loss.item(), train_corr.item(), train_corr.item() * 100 / (100 * idx)])
-    train_duration = time() - start_train_time
-    print('Training Duration:', train_duration, 's')
     print()
+train_duration = time() - start_train_time
+print('Training Duration: {:.2f}s'.format(train_duration))
+print()
 
 print('Final Training Accuracy: {:.2f}'.format(training_results[len(training_results) - 1][3]))
 
